@@ -24,7 +24,7 @@ pipeline {
 	stage('Deploy to Docker Host') {
           steps {
             sh    'docker -H tcp://10.1.1.100:2375 stop prodwebapp1 || true'
-            sh    'docker -H tcp://10.1.1.100:2375 run --rm -dit --name prodwebapp1 --hostname prodwebapp1 -p 8000:80 dockerImage'
+            sh    'docker -H tcp://10.1.1.100:2375 run --rm -dit --name prodwebapp1 --hostname prodwebapp1 -p 8000:80 registry + ":$BUILD_NUMBER'
             }
         }
 	stage('Check WebApp Rechability') {
