@@ -8,7 +8,7 @@ pipeline {
         stage('Cloning GitHub Repo') {
           steps {
             sh 'rm -rf dockertest1'
-            sh 'git clone --branch devopstesting https://github.com/mavrick202/dockertest1.git'
+            sh 'git clone --branch devopsclasstesting https://github.com/mavrick202/dockertest1.git'
             }
         }
 
